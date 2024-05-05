@@ -177,7 +177,7 @@ def calculate_triangle_area(a, b, c):
     return area
 ```
 ### Результат
-![Меню]([https://github.com/DmitryTychkov/Software_Engineering/blob/issue_3/issue_3/pic/lab_3_1.png](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_4/issue_4/pic/4_5_1.png))
+![Меню](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_4/issue_4/pic/4_5_1.png)
 ### Выводы
 #### Получаем ввод от пользователя, 3 стороны треугольника. Запускаем функцию calculate_triangle_area передаём в неё параметрами введёные значения.
 #### В функции calculate_triangle_area считаем площадь по формуле, возврашаем полученное значение
