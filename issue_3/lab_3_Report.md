@@ -36,6 +36,7 @@ for result in range(1, 7):
 print(result)
 ```
 ### Результат
+
 ![Меню](https://github.com/DmitryTychkov/Software_Engineering/blob/issue_3/issue_3/pic/lab_3_1.png)
 ### Выводы
 #### Идём циклом, начинаем с 1, на 7 итерации значение переменной равно 6, в теле цикла умножаем значение переменной на 5 = 30 и прибавляем 1, по итогу получаем 31 из 1.
