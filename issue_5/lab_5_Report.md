@@ -49,7 +49,7 @@ for worker in checks:
 
 print("Работник с наибольшим количеством посещений:", max(workers, key=workers.get) )
 ```
-![Меню](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_4/issue_4/pic/4_1.png)
+![Меню](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_5/issue_5/pic/5_1.png)
 ### Выводы
 #### Сначала создаём массив чеков, затем выводим кол-во выданных чеков за неделю, для этого узнаём длинну массива.
 #### Затем узнаём кол-во уникальных посетителей ресторана, для этого массив чеков приводим к массиву множества и считаем его длинну, так как массив множеств и так может содержать только уникальные значения, нам этого вполне достаточно.
@@ -77,7 +77,7 @@ print("Лучшие результаты: ", sort_result[0], sort_result[1], sor
 print("Худшие результаты: ", sort_result_reverse[0], sort_result_reverse[1], sort_result_reverse[2])
 print("Все результаты начиная с 10: ", sort_result)
 ```
-![Меню](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_5/issue_5/5_2.py)
+![Меню](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_5/issue_5/pic/5_2.png)
 ### Выводы
 #### Сначала создаём массив всех результатов, затем сортируем по возрастанию "sort_result" и по убыванию "sort_result_reverse"
 #### Ну а дальше просто всё выводим на экран, по требованию задачи, сначала три лучших, затем 3 худших, затем все результаты начиная с 10.
@@ -121,7 +121,7 @@ s_min = calculate_triangle_area(a_min, b_min, c_min)
 print("Площадь треугольника из минимальных элементов, полученных из списков, равна: ", s_min)
 print("Площадь треугольника из максимальных элементов, полученных из списков, равна: ", s_max)
 ```
-![Меню](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_5/issue_5/5_3.py)
+![Меню](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_5/issue_5/pic/5_3.png)
 ### Выводы
 #### Сначала пишем функцию для поиска площади треугольника, воспользуемся формулой Герона которую использовали в 4 лабораторной работе.
 #### Затем создаём массивы значений, сортируем, записываем максимальные значения в переменные, точно так же записываем минимальные значения
@@ -158,7 +158,7 @@ print(correct_estimates(one))
 print(correct_estimates(two))
 print(correct_estimates(three))
 ```
-![Меню](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_5/issue_5/5_4.py)
+![Меню](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_5/issue_5/pic/5_4.png)
 ### Выводы
 #### Делаем функцию, на вход принимаем массив. Внутри создаём ещё один массив под корректные оценки. Идём циклом по элементам массива, проверяем, если оценка 3 то исправляем на 4, далее проверяем, это не 2-ка? Если нет то записываем эту оценку в массив корректных оценок.
 #### Закончили работу с массивом? Возвращаем массив корректных оценок.
@@ -205,7 +205,7 @@ print(generate_sets(list_1))
 print(generate_sets(list_2))
 print(generate_sets(list_3))
 ```
-![Меню](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_5/issue_5/5_5.py)
+![Меню](https://github.com/DmitryTychkov/Software_Engineering_NEW/blob/issue_5/issue_5/pic/5_5.png)
 ### Выводы
 #### Для решения этой задачи мы можем использовать словарь, в котором ключами будут числа, а значениями - количество повторений этих чисел в исходных списках. Затем мы сформируем множества, включая повторяющиеся числа, преобразованные в строки, в соответствии с заданным правилом.
 #### Функция generate_sets принимает список чисел в качестве входного аргумента, создает словарь для подсчета повторений чисел, а затем формирует множество, учитывая повторения чисел и преобразуя их в строки, если они повторяются.
