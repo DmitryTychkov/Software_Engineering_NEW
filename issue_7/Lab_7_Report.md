@@ -143,11 +143,35 @@ if __name__ == "__main__":
 
 ### Результат
 ```python
+def count_statistics(file_name):
+    total_letters = 0
+    total_words = 0
+    total_lines = 0
+
+    with open(file_name, 'r') as file:
+        for line in file:
+            total_letters += sum(1 for char in line if char.isalpha())
+            total_words += len(line.split())
+            total_lines += 1
+
+    return total_letters, total_words, total_lines
+
+def main():
+    file_name = "text/7_3.txt"
+    letters, words, lines = count_statistics(file_name)
+    print(f"Input file contains:")
+    print(f"{letters} letters")
+    print(f"{words} words")
+    print(f"{lines} lines")
+
+if __name__ == "__main__":
+    main()
 
 ```
 ![Меню]()
 ### Выводы
-#### 
+#### count_statistics -Эта функция принимает имя файла в качестве аргумента. Инициализируются счетчики для общего количества букв (total_letters), общего количества слов (total_words) и общего количества строк (total_lines). Затем открывается файл для чтения с помощью оператора with. Для каждой строки файла в цикле for: total_letters увеличивается на количество букв в строке (все символы, являющиеся буквами, подсчитываются с помощью выражения 1 for char in line if char.isalpha(), а затем суммируются). total_words увеличивается на количество слов в строке, которое определяется разбиением строки на слова с помощью метода split() и подсчетом элементов полученного списка с помощью len(). total_lines увеличивается на 1. Функция возвращает кортеж с общим количеством букв, слов и строк в файле.
+#### main() - Эта функция является точкой входа в программу. Устанавливается имя файла file_name. Вызывается функция count_statistics() с указанным именем файла, и возвращенные ей значения сохраняются в переменных letters, words и lines. Затем выводится сообщение о количестве букв, слов и строк в файле.
 
 ## Самостоятельная работа №4
 #### Напишите программу, которая получает на вход предложение, выводит его в терминал, заменяя все запрещенные слова звездочками * (количество звездочек равно количеству букв в слове). 
