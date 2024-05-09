@@ -183,20 +183,68 @@ if __name__ == "__main__":
 
 ### Результат
 ```python
+import re
+def load_censor(file_name):
+    with open(file_name, 'r') as file:
+        censor_words = file.read().split()
+    return censor_words
 
+def censor(text, censor_words):
+    censor_text = text
+    for word in censor_words:
+        pattern = re.compile(r'\b' + re.escape(word) + r'\b', re.IGNORECASE)
+        censor_text = pattern.sub('*' * len(word), censor_text)
+
+    return censor_text
+
+def main():
+    censor_words = load_censor("text/7_4.txt")
+    text = input("Введите предложение: ")
+    censored_text = censor(text, censor_words)
+    print("Результат: ", censored_text)
+
+if __name__ == "__main__":
+    main()
 ```
 ![Меню]()
 ### Выводы
-#### 
+#### load_censor(file_name) - Функция load_censor загружает список запрещенных слов из файла с именем file_name. Она открывает файл для чтения и считывает его содержимое в строку. Затем строка разбивается на список слов с помощью метода split(), который разделяет строку по пробелам (по умолчанию). В итоге функция возвращает список запрещенных слов.
+#### censor(text, censor_words) - Эта функция принимает в качестве аргументов текст text и список запрещенных слов censor_words, и возвращает цензурированный текст. Для каждого запрещенного слова создается регулярное выражение с помощью re.compile(), которое ищет целые слова с учетом регистра. Затем для каждого найденного слова в тексте оно заменяется на строку звездочек (*) той же длины, что и исходное слово. Замена производится с помощью метода pattern.sub(). Функция возвращает цензурированный текст.
+#### main() - Главная функция программы. Загружает список запрещенных слов из файла text/7_4.txt. Просит пользователя ввести предложение. Затем вызывает функцию censor() для цензурирования введенного предложения и выводит результат в терминал.
 
 ## Самостоятельная работа №5
 #### Самостоятельно придумайте и решите задачу, которая будет взаимодействовать с текстовым файлом
 
 ### Результат
 ```python
+def load_shopping_list(file_name):
+    shopping_list = {}
+    with open(file_name, 'r') as file:
+        lines = file.readlines()
+        for line in lines:
+            date, items = line.strip().split(': ')
+            shopping_list[date] = items.split(', ')
+    return shopping_list
 
+def total_items_per_day(shopping_list):
+    total_items = {}
+    for date, items in shopping_list.items():
+        total_items[date] = len(items)
+    return total_items
+
+def main():
+    file_name = "text/7_5.txt"
+    shopping_list = load_shopping_list(file_name)
+    print("Общее количество покупок за каждый день:")
+    for date, total_items in total_items_per_day(shopping_list).items():
+        print(f"{date}: {total_items}")
+
+
+main()
 ```
 ![Меню]()
 ### Выводы
-#### 
+#### load_shopping_list(file_name) - Эта функция считывает информацию о списке покупок из файла file_name. Она создает пустой словарь shopping_list и проходит по каждой строке файла. Для каждой строки она извлекает дату и список покупок и добавляет их в словарь shopping_list. Функция возвращает этот словарь.
+#### total_items_per_day(shopping_list) - Эта функция вычисляет общее количество покупок за каждый день. Она проходит по словарю shopping_list и для каждой даты считает количество элементов в списке покупок.
+#### main() - Это главная функция программы. Она вызывает функции load_shopping_list() и total_items_per_day() для загрузки списка покупок и вывода общего количества покупок за каждый день в терминал.
 
