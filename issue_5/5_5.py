@@ -3,7 +3,7 @@ list_2 = [5, 5, 5, 5, 5, 5, 5]
 list_3 = [2, 2, 1, 2, 2, 5, 6, 7, 1, 3, 2, 2]
 
 def generate_sets(input_list):
-    # —оздаем словарь дл€ подсчета повторений чисел
+
     count_dict = {}
     for num in input_list:
         if num in count_dict:
@@ -12,7 +12,7 @@ def generate_sets(input_list):
             count_dict[num] = 1
 
     result_set = set()
-    # ‘ормируем множество с учетом повторений чисел
+
     for num, count in count_dict.items():
         result_set.add(num)
         for i in range(2, count + 1):
